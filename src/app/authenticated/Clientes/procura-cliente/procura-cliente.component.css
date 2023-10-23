@@ -1,0 +1,14 @@
+/* procura-clientes.component.css */
+
+.cliente-item {
+  cursor: pointer; /* Altera o cursor para indicar que é clicável */
+  transition: color 0.3s; /* Adiciona uma transição suave de cor */
+}
+
+.link-style {
+  text-decoration: underline; /* Adiciona sublinhado para parecer um link */
+}
+
+.link-style:hover {
+  color: #0056b3; /* Altera a cor do link ao passar o mouse */
+}

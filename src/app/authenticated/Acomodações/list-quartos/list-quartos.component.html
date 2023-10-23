@@ -1,0 +1,28 @@
+<div class="quartos-list">
+  <h2>Lista de Quartos</h2>
+
+  <table *ngIf="quartos.length > 0">
+    <thead>
+      <tr>
+        <th>Número</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Tipo</th>
+        <th>Capacidade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let quarto of quartos">
+        <td>{{ quarto.numero }}</td>
+        <td>{{ quarto.descricao }}</td>
+        <td>R$ {{ quarto.preco.toFixed(2) }}</td>
+        <td>{{ quarto.tipo }}</td>
+        <td>{{ quarto.capacidade }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="quartos.length === 0">
+    <p>Nenhum quarto cadastrado.</p>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div>
+  <h2>Cadastro de Quartos</h2>
+  <form (submit)="submitForm()">
+    <div class="form-group">
+
+      <div class="form-group">
+        <label for="tipo">Tipo de Quarto:</label>
+        <input type="text" id="tipo" [(ngModel)]="quarto.tipo" name="tipo" required>
+      </div>
+
+      <label for="numero">Número do Quarto:</label>
+      <input type="text" id="numero" [(ngModel)]="quarto.numero" name="numero" required>
+    </div>
+
+    <div class="form-group">
+      <label for="preco">Preço por Noite:</label>
+      <input type="number" id="preco" [(ngModel)]="quarto.preco" name="preco" required>
+    </div>
+
+    <div class="form-group">
+      <label for="capacidade">Capacidade Máxima de Pessoas:</label>
+      <input type="number" id="capacidade" [(ngModel)]="quarto.capacidade" name="capacidade" required>
+    </div>
+
+    <div class="form-group">
+      <label for="descricao">Descrição:</label>
+      <textarea id="descricao" [(ngModel)]="quarto.descricao" name="descricao"></textarea>
+    </div>
+
+    <button type="submit">Salvar</button>
+  </form>
+</div>

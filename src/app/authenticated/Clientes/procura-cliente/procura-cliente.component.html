@@ -1,0 +1,22 @@
+<div class="search-container">
+  <h2>Listagem de Clientes</h2>
+
+  <div class="form-group">
+    <input type="text" placeholder="Pesquisar por nome" [(ngModel)]="nomePesquisa">
+    <button (click)="pesquisarClientes()">Pesquisar</button>
+  </div>
+
+  <ul *ngIf="clientes.length > 0; else noClientes">
+    <li
+  *ngFor="let cliente of clientes"
+  (click)="abrirDetalhesCliente(cliente)"
+  class="cliente-item link-style"
+>
+  {{ cliente.fullName }}
+</li>
+  </ul>
+
+  <ng-template #noClientes>
+    <p>Nenhum cliente cadastrado.</p>
+  </ng-template>
+</div>

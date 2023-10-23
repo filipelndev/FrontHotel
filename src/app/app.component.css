@@ -1,0 +1,42 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 250px; /* Largura da sidenav retrátil */
+  background-color: #f97d008b; /* Cor de fundo da sidenav */
+  color: #fff; /* Cor do texto da sidenav */
+}
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidenav ul li {
+  margin: 10px;
+}
+
+.sidenav a {
+  color: #fff; /* Cor do texto dos links na sidenav */
+  text-decoration: none; /* Remova a decoração de texto (sublinhado) dos links */
+  transition: color 0.3s ease; /* Efeito de transição suave para a cor do texto ao passar o mouse */
+}
+
+.sidenav a:hover {
+  color: #ff0000; /* Cor do texto dos links na sidenav quando hover */
+}
+
+
+.main-content {
+  padding: 20px;
+}
+
+.toggle-button {
+  position: absolute;
+  top: 10px; /* Ajuste a posição vertical conforme necessário */
+  left: 10px; /* Ajuste a posição horizontal conforme necessário */
+  z-index: 1000; /* Garante que o botão esteja acima de outros elementos */
+}

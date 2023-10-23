@@ -1,0 +1,29 @@
+/* Estilos para a tela de apresentação (home) */
+.home-container {
+  background-color: #ff8a50; /* Cor de fundo azul */
+  color: #fff; /* Cor do texto branco */
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.image-container {
+  margin-top: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}

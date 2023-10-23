@@ -1,0 +1,22 @@
+<div class="login-container">
+  <div class="login-form">
+    <h2>Bem-vindo ao Nosso Hotel</h2>
+    <!-- campo de erro -->
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    <!-- formulário de login -->
+    <form (ngSubmit)="onSubmit()">
+      <!-- campo email -->
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="Seu email" required>
+      </div>
+      <!-- campo senha -->
+      <div class="form-group">
+        <label for="password">Senha:</label>
+        <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Sua senha" required>
+      </div>
+      <!-- botão login do tipo submit -->
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+</div>

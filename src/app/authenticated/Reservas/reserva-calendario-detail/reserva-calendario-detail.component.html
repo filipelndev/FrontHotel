@@ -1,0 +1,6 @@
+<div *ngIf="reserva">
+  <h2>Detalhes da Reserva</h2>
+  <p>Número do Quarto: {{ reserva.quarto?.numero }}</p>
+  <p>Cliente: {{reserva.clientes?.[0]?.fullName }} </p>
+  <!-- Outras informações da reserva aqui -->
+</div>

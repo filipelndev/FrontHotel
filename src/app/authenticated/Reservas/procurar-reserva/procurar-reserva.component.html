@@ -1,0 +1,21 @@
+<div class="search-container">
+  <input type="text" placeholder="Pesquisar reservas" [(ngModel)]="searchTerm" (input)="searchReservas()">
+  <button (click)="searchReservas()">Pesquisar</button>
+</div>
+
+<ul class="reserva-list">
+  <li *ngFor="let reserva of reservasFiltradas">
+    <a (click)="showReservaDetails(reserva)">
+      {{ reserva.clientes?.[0]?.fullName }} - {{ reserva.dataCheckin| date: 'dd/MM/yyyy' }}
+    </a>
+  </li>
+</ul>
+
+<div class="reserva-details" *ngIf="selectedReserva">
+  <h2>Detalhes da Reserva</h2>
+  <p><strong>Nome do Primeiro Cliente:</strong> {{ selectedReserva.clientes?.[0]?.fullName }}</p>
+  <p><strong>Data de Check-in:</strong> {{ selectedReserva.dataCheckin | date: 'dd/MM/yyyy' }}</p>
+  <p><strong>Data de Check-out:</strong> {{ selectedReserva.dataCheckout | date: 'dd/MM/yyyy' }}</p>
+  <p><strong>Quarto:</strong> {{ selectedReserva.quarto?.numero }}</p>
+  <!-- Adicione mais informações de reserva, se necessário -->
+</div>

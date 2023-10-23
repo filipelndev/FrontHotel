@@ -1,0 +1,46 @@
+<div class="reservation-registration">
+  <h2>Cadastro de Reservas</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="cliente">Cliente(s):</label>
+      <input type="text" id="searchCliente" name="searchCliente" [(ngModel)]="searchClient" (input)="filterClients()">
+      <select id="cliente" name="cliente" [(ngModel)]="selectedClients" multiple>
+        <option *ngFor="let cliente of filteredClients" [ngValue]="cliente" (click)="addSelectedClient(cliente)">
+          Nome: {{ cliente.fullName }} | Documento: {{ cliente.idNumber }}
+        </option>
+      </select>
+    </div>
+
+    <div class="selected-clients">
+      <span *ngFor="let selectedClient of selectedClients" class="selected-client">
+        Nome: {{ selectedClient.fullName }} | Documento: {{ selectedClient.idNumber }}
+        <button (click)="removeSelectedClient(selectedClient)">Remover</button>
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label for="dataCheckin">Data de Check-in:</label>
+      <input type="date" id="dataCheckin" name="dataCheckin" [(ngModel)]="reserva.dataCheckin">
+    </div>
+
+    <div class="form-group">
+      <label for="dataCheckout">Data de Check-out:</label>
+      <input type="date" id="dataCheckout" name="dataCheckout" [(ngModel)]="reserva.dataCheckout">
+    </div>
+
+    <div class="form-group">
+      <label for="quarto">Quarto:</label>
+      <select id="quarto" name="quarto" [(ngModel)]="quartoSelecionado" (change)="updateNumeroQuarto()">
+        <option *ngFor="let quarto of quartos" [ngValue]="quarto">{{ quarto.numero }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="numeroPessoas">Número de Pessoas:</label>
+      <input type="number" id="numeroPessoas" name="numeroPessoas" [(ngModel)]="reserva.numeroPessoas" min="1" (change)="updateMaxPessoasPermitidas()">
+    </div>
+
+    <button type="submit">Cadastrar Reserva</button>
+  </form>
+</div>

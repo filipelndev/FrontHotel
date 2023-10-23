@@ -1,0 +1,55 @@
+/* calendario-quartos.component.css */
+
+/* Estilize o componente de calendário */
+.ng-fullcalendar {
+  background-color: #f5f5f5; /* Cor de fundo de fallback */
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilize o título do calendário */
+.ng-fullcalendar h2 {
+  color: #ff5722; /* Cor vibrante para o título */
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Estilize os botões do calendário */
+.fc-header-toolbar {
+  background-color: #ff5722; /* Cor vibrante para a barra de ferramentas */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.fc-button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.fc-button:hover {
+  background-color: #ff8a50; /* Cor mais clara ao passar o mouse sobre o botão */
+}
+
+/* Estilize os eventos do calendário */
+.fc-event-title {
+  color: #ff5722; /* Cor vibrante para o título do evento */
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.fc-event-title:hover {
+  color: #ff8a50; /* Cor mais clara ao passar o mouse sobre o título do evento */
+}
