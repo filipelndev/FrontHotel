@@ -1,48 +1,43 @@
-<h2>Detalhes do Cliente</h2>
+<h2 style="color: #FFA500">Detalhes da Pessoa</h2>
 
-<div class="cliente-detalhes">
+<div class="pessoa-detalhes" style="background-color: #FFA500; color: #fff; padding: 15px; border-radius: 10px;">
   <div>
-    <strong>Nome Completo:</strong>
-    <span>{{ data.fullName }}</span>
+    <strong>Nome do cliente:</strong>
+    <span>{{ data.razao_social }}</span>
   </div>
+
+  <div>
+    <strong>Empresa:</strong>
+    <span>{{ data.nome_fantasia }}</span>
+  </div>
+
+  <div>
+    <strong>CPF:</strong>
+    <span>{{ data.cnpj_cpf }}</span>
+  </div>
+
+  <div>
+    <strong>RG/IE:</strong>
+    <span>{{ data.rg_ie }}</span>
+  </div>
+
+  <div>
+    <strong>Data de Nascimento:</strong>
+    <span>{{ data.data_nascimento | date: 'dd/MM/yyyy' }}</span>
+  </div>
+
+  <div>
+    <strong>Telefone:</strong>
+    <span>{{ data.telefone }}</span>
+  </div>
+
+  <div>
+    <strong>Celular:</strong>
+    <span>{{ data.celular }}</span>
+  </div>
+
   <div>
     <strong>E-mail:</strong>
     <span>{{ data.email }}</span>
-  </div>
-  <div>
-    <strong>Telefone:</strong>
-    <span>{{ data.phone }}</span>
-  </div>
-  <div>
-    <strong>Data de Nascimento:</strong>
-    <span>{{ data.birthdate | date }}</span>
-  </div>
-  <div>
-    <strong>Número do Documento de Identidade:</strong>
-    <span>{{ data.idNumber }}</span>
-  </div>
-  <div>
-    <strong>Endereço:</strong>
-    <span>{{ data.address }}</span>
-  </div>
-  <div>
-    <strong>Numero:</strong>
-    <span>{{ data.numero }}</span>
-  </div>
-  <div>
-    <strong>Cidade:</strong>
-    <span>{{ data.city }}</span>
-  </div>
-  <div>
-    <strong>Estado:</strong>
-    <span>{{ data.state }}</span>
-  </div>
-  <div>
-    <strong>CEP:</strong>
-    <span>{{ data.zipCode }}</span>
-  </div>
-  <div>
-    <strong>Observações:</strong>
-    <span>{{ data.notes }}</span>
   </div>
 </div>

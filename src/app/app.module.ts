@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './authenticate/login/login.component';
 import { HomeComponent } from './authenticated/home/home.component';
 import { HotelComponent } from './authenticated/hotel/hotel.component';
-import { CadatroClienteComponent } from './authenticated/Clientes/cadatro-cliente/cadatro-cliente.component';
+import { CadatroPessoaComponent } from './authenticated/Clientes/cadatro-cliente/cadatro-pessoa.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
@@ -34,7 +34,7 @@ import { ProcurarReservaComponent } from './authenticated/Reservas/procurar-rese
     LoginComponent,
     HomeComponent,
     HotelComponent,
-    CadatroClienteComponent,
+    CadatroPessoaComponent,
     CadastroAcomodacoesComponent,
     ListQuartosComponent,
     ProcuraClienteComponent,

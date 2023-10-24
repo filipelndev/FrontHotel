@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './authenticate/login/login.component';
 import { HomeComponent } from './authenticated/home/home.component';
 import { AuthGuard } from './service/auth.guard';
-import { CadatroClienteComponent } from './authenticated/Clientes/cadatro-cliente/cadatro-cliente.component';
+import { CadatroPessoaComponent } from './authenticated/Clientes/cadatro-cliente/cadatro-pessoa.component';
 import { CadastroAcomodacoesComponent } from './authenticated/Acomodações/cadastro-acomodacoes/cadastro-acomodacoes.component';
 import { ListQuartosComponent } from './authenticated/Acomodações/list-quartos/list-quartos.component';
 import { ProcuraClienteComponent } from './authenticated/Clientes/procura-cliente/procura-cliente.component';
@@ -14,7 +14,7 @@ import { ProcurarReservaComponent } from './authenticated/Reservas/procurar-rese
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'cadastro-cliente', component: CadatroClienteComponent /* canActivate: [AuthGuard]*/ },
+  { path: 'cadastro-cliente', component: CadatroPessoaComponent /* canActivate: [AuthGuard]*/ },
   { path: 'lista-cliente', component: ProcuraClienteComponent, /* canActivate: [AuthGuard]*/ },
   { path: 'cadastro-acomodacoes', component: CadastroAcomodacoesComponent, /* canActivate: [AuthGuard]*/ },
   { path: 'lista-quartos', component: ListQuartosComponent }, /* canActivate: [AuthGuard]*/

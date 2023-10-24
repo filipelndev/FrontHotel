@@ -7,14 +7,14 @@
       <input type="text" id="searchCliente" name="searchCliente" [(ngModel)]="searchClient" (input)="filterClients()">
       <select id="cliente" name="cliente" [(ngModel)]="selectedClients" multiple>
         <option *ngFor="let cliente of filteredClients" [ngValue]="cliente" (click)="addSelectedClient(cliente)">
-          Nome: {{ cliente.fullName }} | Documento: {{ cliente.idNumber }}
+          Nome: {{ cliente.nome_fantasia }} | Documento: {{ cliente.id }}
         </option>
       </select>
     </div>
 
     <div class="selected-clients">
       <span *ngFor="let selectedClient of selectedClients" class="selected-client">
-        Nome: {{ selectedClient.fullName }} | Documento: {{ selectedClient.idNumber }}
+        Nome: {{ selectedClient.nome_fantasia }} | Documento: {{ selectedClient.id }}
         <button (click)="removeSelectedClient(selectedClient)">Remover</button>
       </span>
     </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Cliente } from '../../../Models/Cliente';
+import { Pessoa } from '../../../Models/Pessoa';
 import { QuartosService } from '../../../service/quartos.service';
 import { Quarto } from '../../../Models/Quarto';
 import { Reserva } from 'src/app/Models/reserva';
@@ -15,9 +15,7 @@ export class CadastroReservaComponent implements OnInit {
   maxPessoasPermitidas: number = 1;
   numeroPessoas: number = 1;
   searchClient: string = '';
-  filteredClients: Cliente[] = [];
-  CheckinData: Date = new Date();
-  CheckoutData: Date = new Date();
+  filteredClients: Pessoa[] = [];
   reserva: Reserva = {
     quarto: undefined,
     dataReserva: new Date(),
@@ -26,8 +24,8 @@ export class CadastroReservaComponent implements OnInit {
     numeroPessoas: 1,
     clientes: [],
   };
-  clientes: Cliente[] = [];
-  selectedClients: Cliente[] = [];
+  clientes: Pessoa[] = [];
+  selectedClients: Pessoa[] = [];
   quartos: Quarto[] = [];
   quartoSelecionado: Quarto | undefined;
 
@@ -39,7 +37,7 @@ export class CadastroReservaComponent implements OnInit {
   }
 
   carregarClientes() {
-    this.http.get<Cliente[]>('http://localhost:8080/api/clientes').subscribe((data: Cliente[]) => {
+    this.http.get<Pessoa[]>('http://localhost:8080/api/clientes').subscribe((data: Pessoa[]) => {
       this.clientes = data;
     });
   }
@@ -78,12 +76,12 @@ export class CadastroReservaComponent implements OnInit {
 
   filterClients() {
     this.filteredClients = this.clientes.filter((cliente) =>
-      cliente.fullName.toLowerCase().includes(this.searchClient.toLowerCase()) ||
-      cliente.idNumber.includes(this.searchClient)
+      cliente.nome_fantasia.toLowerCase().includes(this.searchClient.toLowerCase()) ||
+      cliente.id?.toString().includes(this.searchClient)
     );
   }
 
-  addSelectedClient(cliente: Cliente) {
+  addSelectedClient(cliente: Pessoa) {
 
         this.selectedClients.push(cliente);
         console.log('Cliente adicionado:', cliente);
@@ -91,7 +89,7 @@ export class CadastroReservaComponent implements OnInit {
 
   }
 
-  removeSelectedClient(cliente: Cliente) {
+  removeSelectedClient(cliente: Pessoa) {
     const index = this.selectedClients.findIndex((c) => c.id === cliente.id);
     if (index !== -1) {
       this.selectedClients.splice(index, 1);

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from '../../../Models/Cliente';
+import { Pessoa } from '../../../Models/Pessoa';
 import { MatDialog } from '@angular/material/dialog';
 import { DetalheClienteComponent } from '../detalhe-cliente/detalhe-cliente.component';
 
@@ -10,7 +10,7 @@ import { DetalheClienteComponent } from '../detalhe-cliente/detalhe-cliente.comp
   styleUrls: ['./procura-cliente.component.css']
 })
 export class ProcuraClienteComponent implements OnInit {
-  clientes: Cliente[] = [];
+  clientes: Pessoa[] = [];
   nomePesquisa: string = '';
 
   constructor(private http: HttpClient, public dialog: MatDialog) { }
@@ -21,14 +21,14 @@ export class ProcuraClienteComponent implements OnInit {
 
   listarClientes() {
     // Atualize a URL para localhost:8080
-    this.http.get<Cliente[]>('http://localhost:8080/api/clientes').subscribe((data: Cliente[]) => {
+    this.http.get<Pessoa[]>('http://127.0.0.1:8000/pessoa/').subscribe((data: Pessoa[]) => {
       this.clientes = data;
     });
   }
 
   pesquisarClientes() {
     // Atualize a URL para localhost:8080
-    this.http.get<Cliente[]>(`http://localhost:8080/api/clientes/buscar?nome=${this.nomePesquisa}`).subscribe((data: Cliente[]) => {
+    this.http.get<Pessoa[]>(`http://localhost:8080/api/clientes/buscar?nome=${this.nomePesquisa}`).subscribe((data: Pessoa[]) => {
       this.clientes = data;
     });
   }

@@ -1,4 +1,4 @@
-import { Cliente } from './Cliente';
+import { Pessoa } from './Pessoa';
 import { Quarto } from './Quarto';
 
 export interface Reserva {
@@ -9,5 +9,5 @@ export interface Reserva {
   dataCheckout: Date;
   CheckedIn?: boolean;
   numeroPessoas: number;
-  clientes?: Cliente[];
+  clientes?: Pessoa[];
 }
