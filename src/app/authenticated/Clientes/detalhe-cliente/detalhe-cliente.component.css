@@ -1,33 +1,38 @@
-/* cliente-detalhes.component.css */
+/* styles.css */
 
-/* Estilos para a visualização de detalhes do cliente */
-.cliente-detalhes {
-  background-color: #f5f5f5;
+/* Estilo para o título */
+h2 {
+  color: #FFA500;
+  margin-bottom: 20px; /* Adiciona espaçamento entre o título e o conteúdo */
+}
+
+/* Estilo para o contêiner de detalhes */
+.pessoa-detalhes {
+  background-color: #FFA500;
+  color: #fff;
+  padding: 35px;
+  border-radius: 30px;
+  line-height: 1.5; /* Espaçamento entre as linhas */
+  max-width: 600px; /* Aumenta o tamanho da tela de visualização */
+  margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+}
+
+/* Estilo para o botão de edição */
+.edit-button {
+  display: block;
+  align-items: center;
+  align-content: center;
+  background-color: #FFf;
+  color: #FFA500;
+  border: black;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  text-align: left; /* Alinhar o texto à esquerda */
-  max-width: 400px;
-  width: 90%;
-  margin: 0 auto;
+  align-self: center;
+  margin-top: 15px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-.cliente-detalhes h2 {
-  color: #ff5722;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.cliente-detalhes div {
-  margin-bottom: 15px;
-}
-
-.cliente-detalhes strong {
-  font-weight: bold;
-}
-
-.cliente-detalhes span {
-  display: inline-block;
-  margin-left: 10px; /* Adicionar margem à esquerda para separar os rótulos dos valores */
-  font-size: 16px;
+/* Estilo para o botão de edição no hover (quando o mouse passa por cima) */
+.edit-button:hover {
+  background-color: #FFD700; /* Altera a cor no hover */
 }

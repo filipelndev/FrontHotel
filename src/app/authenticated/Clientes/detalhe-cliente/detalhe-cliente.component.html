@@ -1,43 +1,60 @@
-<h2 style="color: #FFA500">Detalhes da Pessoa</h2>
+<div class="pessoa-detalhes">
+  <form (ngSubmit)="saveChanges()">
+    <div>
+      <strong>ID</strong>
+      <input [(ngModel)]="data.id" name="id" disabled>
+    </div>
 
-<div class="pessoa-detalhes" style="background-color: #FFA500; color: #fff; padding: 15px; border-radius: 10px;">
-  <div>
-    <strong>Nome do cliente:</strong>
-    <span>{{ data.razao_social }}</span>
-  </div>
+    <div>
+      <strong>Nome do cliente:</strong>
+      <input [(ngModel)]="data.razao_social" name="razao_social" (ngModelChange)="onFieldChange()">
+    </div>
 
-  <div>
-    <strong>Empresa:</strong>
-    <span>{{ data.nome_fantasia }}</span>
-  </div>
+    <div>
+      <strong>Empresa:</strong>
+      <input [(ngModel)]="data.nome_fantasia" name="nome_fantasia" (ngModelChange)="onFieldChange()">
+    </div>
 
-  <div>
-    <strong>CPF:</strong>
-    <span>{{ data.cnpj_cpf }}</span>
-  </div>
+    <div>
+      <strong>CPF:</strong>
+      <input [(ngModel)]="data.cnpj_cpf" name="cnpj_cpf" (ngModelChange)="onFieldChange()">
+    </div>
 
-  <div>
-    <strong>RG/IE:</strong>
-    <span>{{ data.rg_ie }}</span>
-  </div>
+    <div>
+      <strong>RG/IE:</strong>
+      <input [(ngModel)]="data.rg_ie" name="rg_ie" (ngModelChange)="onFieldChange()">
+    </div>
 
-  <div>
-    <strong>Data de Nascimento:</strong>
-    <span>{{ data.data_nascimento | date: 'dd/MM/yyyy' }}</span>
-  </div>
+    <div>
+      <strong>Data de Nascimento:</strong>
+      <input type="date" [(ngModel)]="data.data_nascimento" name="data_nascimento" (ngModelChange)="onFieldChange()">
+    </div>
 
-  <div>
-    <strong>Telefone:</strong>
-    <span>{{ data.telefone }}</span>
-  </div>
+    <div>
+      <strong>Telefone:</strong>
+      <input [(ngModel)]="data.telefone" name="telefone" (ngModelChange)="onFieldChange()">
+    </div>
 
-  <div>
-    <strong>Celular:</strong>
-    <span>{{ data.celular }}</span>
-  </div>
+    <div>
+      <strong>Celular:</strong>
+      <input [(ngModel)]="data.celular" name="celular" (ngModelChange)="onFieldChange()">
+    </div>
 
-  <div>
-    <strong>E-mail:</strong>
-    <span>{{ data.email }}</span>
-  </div>
+    <div>
+      <strong>E-mail:</strong>
+      <input [(ngModel)]="data.email" name="email" (ngModelChange)="onFieldChange()">
+    </div>
+
+    <div>
+      <strong>Data de cadastro:</strong>
+      <input type="datetime-local" [(ngModel)]="DataCadastro" name="data_cadastro" (ngModelChange)="onFieldChange()">
+    </div>
+
+    <div>
+      <strong>Ultima alteração:</strong>
+      <input type="datetime-local" [(ngModel)]="UltimaAlteracao" name="ultima_alteracao">
+    </div>
+
+    <button class="edit-button" type="submit" [disabled]="!formDirty">Salvar</button>
+  </form>
 </div>
